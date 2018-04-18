@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<style>
+.wrap {
+  margin: 0px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.container {
+  display: inline-block;
+  width: 33%;
+}
+
+h1 {
+  color: lightgray;
+  font-family: lato;
+  font-size: 1.3rem;
+  font-weight: 200;
+  text-align: center;
+}
+
+.box {
+    height: 40px;
+  margin: 30px auto;
+  width: 40px;
+}
+.box1:hover{
+    transform: scale(2);
+  }
+.box2:hover{
+    transform:  translate(40px, 0px);
+  }
+.box3:hover{
+    transform: rotate(45deg); 
+  }
+.box4:hover{
+    transform:  skew(40deg, 8deg); 
+  }
+.box5:hover{
+    transform:  matrix(1.678, -0.256, 1.522, 2.333, -51.533, -1.989); 
+  }
+.box1 {
+  background: #60D4C8;
+  transition: all 300ms;
+}
+
+.box2 {
+  background: #46BAAF;
+  transition: all 500ms;
+}
+
+.box3 {
+  background: #3EA69B;
+  transition: all 500ms;
+}
+
+.box4 {
+  background: #E9BAAF;
+  transition: all 500ms;
+}
+
+.box5 {
+  background: #CEA69B;
+  transition: all 500ms;
+}
+
+</style>
+</head>
+<body>
+<h2 style="color: #000" align="center">Experiment 5: 2D transformation</h1>
+<div class="wrap">
+  <div class="container">
+    <h1 style="color: #000">Scale</p>
+    <div class="box1 box"></div>
+  </div>
+   <div class="container">
+    <h1 style="color: #000">Translate</p>
+    <div class="box2 box"></div>
+  </div>
+   <div class="container">
+    <h1 style="color: #000">Rotate</p>
+    <div class="box3 box"></div>
+  </div>
+   <div class="container">
+   <h1 style="color: #000">Skew</p>
+    <div class="box4 box"></div>
+  </div>
+   <div class="container">
+    <h1 style="color: #000">Matrix</p>
+    <div class="box5 box"></div>
+  </div>
+</div>
+</body>
+</html>

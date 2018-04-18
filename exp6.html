@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+@font-face {
+  font-family: 'IconPack';
+  src: url('iconpack.eot');
+  src: local('IconPack'), 
+    url('AlexBrush-Regular.ttf') format('truetype'),
+    url('iconpack.svg#IconPack') format('svg');
+}
+.staricon {
+ font-size: 3em;
+  font-family: 'IconPack';
+}
+
+#example1 {
+    background-image: url(download.png), url(2.jpg);
+    background-position: right bottom, left top;
+    background-size: 140px,contain;
+    background-repeat: no-repeat, repeat;
+    padding: 100px;
+}
+h1 {
+    text-shadow: 2px 2px #FF0000;
+}
+#grad1 {
+    height: 90px;
+    background: red; /* For browsers that do not support gradients */
+    background: linear-gradient(to right, red , yellow); /* Standard syntax (must be last) */
+}
+
+#grad2 {
+    height: 90px;
+ background-image: repeating-linear-gradient(135deg, rgba(0,0,0,.3), rgba(0,0,0,.3) 1px, transparent 2px, transparent 2px, rgba(0,0,0,.3) 3px);
+}
+</style>
+</head>
+<body>
+
+<h1>Linear Gradient - Left to Right with a text shadow property</h1>
+
+
+
+
+<div id="grad1"><h2>This linear gradient starts at the left. It starts red, transitioning to yellow:</h2></div>
+<br>
+<div id="example1"><h2 style="color:#ffffff">Multiple Background</h2></div>
+<br>
+<div id="grad2"><h2>Stripped Background Gradient (Patterns)</h2></div>
+<br>
+<div class="staricon">This is the AlexBrush-Regular font type using @fontface</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link href="prac7.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="contact_form_div">
+ <p id="contact_label">CONTACT  FORM</p>
+ <form  method="post" action="test.php" >
+  <p><input type="text" placeholder="Enter Name" name="name" autofocus required="true"></p>
+  <p><input type="email" name="email" placeholder="Enter Email" autocomplete="on"></p>
+ 
+  <p><textarea placeholder="Enter Message" name="msg"></textarea></p>
+ <p> <input type="number" name="quantity" placeholder="Enter Quantity" min="1" max="5"></p>
+  <p><h3>Range:</h3><input type="range" name="points" min="0" max="10"></p>
+  <p><input type="search" name="googlesearch " placeholder="Search"></p>
+   <p><input type="tel" name="usrtel" placeholder="Telephone" pattern="[0-9]{10}" title="Telephone no. should contain only nimbers from 0-9 "></p>
+   <p> <input type="url" name="homepage" placeholder="Enter Url"></p>
+  <p> <input type="datetime-local" name="bdaytime"></p>
+ <p>  <input class="list" placeholder="Select choice" list="browsers" name="browser">
+<datalist id="browsers">
+  <option value="Internet Explorer">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist></p>
+<p><h3>Select your favorite color:</h3>
+  <input type="color" name="favcolor" value="#ff0000"></p>
+  <p><input type="submit" value="SUBMIT"></p>
+ </form>
+</div>
+
+</div>
+</body>
+</html>

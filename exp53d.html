@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ex1 {
+    perspective: 800px;
+}
+
+.ex2 {
+    perspective: 150px;
+}
+
+.cube {
+    font-size: 4em;
+    width: 2em;
+    margin: 1.5em auto;
+    transform-style: preserve-3d;
+    transform: rotateX(-45deg) rotateY(30deg);
+}
+
+.side {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background: rgba(100,100,100,0.5);
+    border: 1px solid red;
+    text-align: center;
+    line-height: 2em;
+}
+
+.front {transform: translateZ(1em);}
+.top {transform: rotateX(90deg) translateZ(1em);}
+.right {transform: rotateY(90deg) translateZ(1em);}
+.left {transform: rotateY(-90deg) translateZ(1em);}
+.bottom {transform: rotateX(-90deg) translateZ(1em);}
+.back {transform: rotateY(-180deg) translateZ(1em);}
+
+#f1_container {
+  position: relative;
+  margin: 10px auto;
+  width: 300px;
+  height: 150px;
+  z-index: 1;
+}
+#f1_container {
+  perspective: 1000;
+}
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+}
+#f1_container:hover #f1_card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #696969;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #aaa;
+}
+
+
+.cube11 {
+    font-size: 4em;
+    width: 2em;
+    margin: 1.5em auto;
+    transform-style: preserve-3d;
+    transform: rotateX(-45deg) rotateY(30deg);
+}
+
+.side11 {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background: rgba(100,100,100,0.5);
+    border: 1px solid red;
+    text-align: center;
+    line-height: 2em;
+}
+
+.front11 {transform: translateZ(1em);}
+.top11 {transform: rotateX(90deg) translateZ(1em);}
+.right11 {transform: rotateY(90deg) translateZ(1em);}
+.left11 {transform: rotateY(-90deg) translateZ(1em);}
+.bottom11 {transform: rotateX(-90deg) translateZ(1em);}
+.back11 {transform: rotateY(-180deg) translateZ(1em);}
+
+
+.container {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  perspective: 1000px;
+  top: calc(50% - 100px);
+  left: calc(50% - 150px);
+}
+
+#box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+#box figure {
+  display: block;
+  position: absolute;
+  border: 2px solid black;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  font-size: 3.5em;
+}
+
+#box .front,
+#box .back {
+  width: 296px;
+  height: 196px;
+}
+
+#box .right,
+#box .left {
+  width: 96px;
+  height: 196px;
+  left: 100px;
+}
+
+#box .top,
+#box .bottom {
+  width: 296px;
+  height: 96px;
+  top: 50px;
+}
+#box .front {
+  transform: rotateY(0deg) translateZ(50px);
+}
+#box .back {
+  transform: rotateX(180deg) translateZ(50px);
+}
+#box .right {
+  transform: rotateY(90deg) translateZ(150px);
+}
+#box .left {
+  transform: rotateY(-90deg) translateZ(150px);
+}
+#box .top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+#box .bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+#box.show-front {
+  transform: translateZ(-50px) rotateY(0deg);
+}
+#box.show-back {
+  transform: translateZ(-50px) rotateX(-180deg);
+}
+#box.show-right {
+  transform: translateZ(-150px) rotateY(-90deg);
+}
+#box.show-left {
+  transform: translateZ(-150px) rotateY(90deg);
+}
+#box.show-top {
+  transform: translateZ(-100px) rotateX(-90deg);
+}
+#box.show-bottom {
+  transform: translateZ(-100px) rotateX(90deg);
+}
+</style>
+</head>
+<body>
+
+<h1>The perspective Property</h1>
+
+<h2>perspective: 800px:</h2>
+<div class="ex1">
+  <div class="cube">
+    <div class="side front">1</div>
+    <div class="side back">6</div>
+    <div class="side right">4</div>
+    <div class="side left">3</div>
+    <div class="side top">5</div>
+    <div class="side bottom">2</div>
+  </div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+
+<h2>perspective: 150px:</h2>
+<div class="ex2">
+  <div class="cube">
+    <div class="side front">1</div>
+    <div class="side back">6</div>
+    <div class="side right">4</div>
+    <div class="side left">3</div>
+    <div class="side top">5</div>
+    <div class="side bottom">2</div>
+  </div>
+</div>
+<br><br><br><br><br>
+<h1>The Card FLip Property</h1>
+<div id="f1_container">
+<div id="f1_card" class="shadow">
+  <div class="front face">
+    <img src="cb.png"/>
+  </div>
+  <div class="back face center">
+    <p>This is nice for exposing more information about an image.</p>
+    <p>Any content can go here.</p>
+  </div>
+</div>
+</div>
+<br>
+<h1>The 3D CUBE</h1>
+<div class="ex1">
+  <div class="cube11" style="">
+    <div class="side11 front11">1</div>
+    <div class="side11 back11">6</div>
+    <div class="side11 right11">4</div>
+    <div class="side11 left11">3</div>
+    <div class="side11 top11">5</div>
+    <div class="side11 bottom11">2</div>
+  </div>
+
+</div><br><br><br><br><br><br><br><br>
+<h1>The Rectangular Prism</h1>
+<section class="container11" style="padding-left: 40%;">
+    <div id="box">
+        <figure class="front"><br>1</figure>
+        <figure class="back"><br>6</figure>
+        <figure class="right"><br>5</figure>
+        <figure class="left"><br>2</figure>
+        <figure class="top">4</figure>
+        <figure class="bottom">3</figure>
+
+    </div>
+
+</body>
+</html>
